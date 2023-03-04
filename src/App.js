@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./components/Home";
+import Specialities from "./components/Specialities";
+import Doctors from "./components/Doctors";
+import DoctorB from "./components/DoctorB";
+import DoctorD from "./components/DoctorD";
+import DoctorS1 from "./components/DoctorS1";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <Routes>
+        <Route exact path = '/' element={<Home/>}/>
+        <Route exact path = '/specialities' element={<Specialities/>}/>
+        <Route exact path = '/doctors' element={<Doctors/>}/>
+        <Route exact path = '/doctors/dr-b-ramesh' element={<DoctorB/>}/>
+        <Route exact path = '/doctors/dr-dinesh' element={<DoctorD/>}/>
+        <Route exact path = '/doctors/dr-sayed' element={<DoctorS1/>}/>
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
